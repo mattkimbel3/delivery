@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<h1>Welcome to Swiftdrop {{user.username}}!</h1>
+
+    <form method="post" action="{% url 'track_shipment' %}">
+        {% csrf_token %}
+        <label for="package_id">Track your shipment:</label>
+        <input placeholder="Enter your Tracking ID" type="text" id="package_id" name="package_id" required>
+        <button type="submit">Track</button>
+    </form>
+
+
+<li><a href="{% url 'create_shipment' %}">Create New Shipment</a></li>
+<li><a href="{% url 'quote' %}">Get Quote</a></li>
+
+
+<div>
+    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+</div>
